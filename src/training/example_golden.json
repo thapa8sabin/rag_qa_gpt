@@ -1,0 +1,172 @@
+{
+  "arts_and_literature": [
+    {
+      "id": "q1",
+      "question": "True or false, The Harry Potter series was written by Lewis Carroll.",
+      "context": [
+        "Alice’s Adventures in Wonderland by Lewis Carroll, which follows a girl through a strange and dreamlike world... In modern times, the Harry Potter series by J. K. Rowling became one of the most popular book series in the world."
+      ],
+      "ideal_answer": "False"
+    },
+    {
+      "id": "q2",
+      "question": "Which novel by Harper Lee addresses themes of justice and prejudice?",
+      "context": [
+        "Other well-known works include To Kill a Mockingbird by Harper Lee, which deals with justice and prejudice..."
+      ],
+      "ideal_answer": "To Kill a Mockingbird"
+    },
+    {
+      "id": "q3",
+      "question": "Name two masterpieces created by Michelangelo during the Renaissance.",
+      "context": [
+        "Michelangelo sculpted David and painted the ceiling of the Sistine Chapel."
+      ],
+      "ideal_answer": "David and the ceiling of the Sistine Chapel"
+    },
+    {
+      "id": "q4",
+      "question": "True or false, Pablo Picasso helped develop the artistic style known as Impressionism.",
+      "context": [
+        "Impressionist painters such as Claude Monet tried to capture light and momentary impressions... Pablo Picasso helped develop Cubism, which showed objects from multiple viewpoints at once."
+      ],
+      "ideal_answer": "False"
+    }
+  ],
+  "general_knowledge": [
+    {
+      "id": "q1",
+      "question": "What ancient writing system was invented by the people of Mesopotamia?",
+      "context": [
+        "The people of Mesopotamia invented writing called cuneiform."
+      ],
+      "ideal_answer": "Cuneiform"
+    },
+    {
+      "id": "q2",
+      "question": "True or false, Alexander Graham Bell discovered penicillin.",
+      "context": [
+        "The telephone was invented by Alexander Graham Bell... Penicillin, the first widely used antibiotic, was discovered by Alexander Fleming."
+      ],
+      "ideal_answer": "False"
+    },
+    {
+      "id": "q3",
+      "question": "Botanically speaking, are bananas considered berries?",
+      "context": [
+        "Bananas are berries, but strawberries are not."
+      ],
+      "ideal_answer": "Yes"
+    },
+    {
+      "id": "q4",
+      "question": "How many bones are in an adult human body?",
+      "context": [
+        "The human body has two hundred and six bones in adults."
+      ],
+      "ideal_answer": "206"
+    }
+  ],
+  "geography": [
+    {
+      "id": "q1",
+      "question": "True or false, flags are used only for international events.",
+      "context": [
+        "Flags are used at international events, on ships, and in schools and government buildings."
+      ],
+      "ideal_answer": "False"
+    },
+    {
+      "id": "q2",
+      "question": "Which river in South America carries more water than any other river in the world?",
+      "context": [
+        "The Amazon River in South America carries more water than any other river and flows through the largest rainforest."
+      ],
+      "ideal_answer": "The Amazon River"
+    },
+    {
+      "id": "q3",
+      "question": "What is the capital city of Australia?",
+      "context": [
+        "Canberra is the capital of Australia, and Wellington is the capital of New Zealand."
+      ],
+      "ideal_answer": "Canberra"
+    },
+    {
+      "id": "q4",
+      "question": "What natural landmark in the United States was carved by the Colorado River?",
+      "context": [
+        "Natural landmarks include the Grand Canyon in the United States, a deep gorge carved by the Colorado River."
+      ],
+      "ideal_answer": "The Grand Canyon"
+    }
+  ],
+  "science_and_nature": [
+    {
+      "id": "q1",
+      "question": "Which planet in our solar system is known as the Red Planet?",
+      "context": [
+        "Mars is called the Red Planet because of its rusty surface and has the largest volcano in the solar system."
+      ],
+      "ideal_answer": "Mars"
+    },
+    {
+      "id": "q2",
+      "question": "True or false, invertebrates are animals that possess a backbone.",
+      "context": [
+        "Vertebrates have a backbone. Invertebrates do not."
+      ],
+      "ideal_answer": "False"
+    },
+    {
+      "id": "q3",
+      "question": "What blood cells in the human body are responsible for carrying oxygen?",
+      "context": [
+        "Red blood cells carry oxygen. White blood cells help fight infection."
+      ],
+      "ideal_answer": "Red blood cells"
+    },
+    {
+      "id": "q4",
+      "question": "What gas causes Uranus and Neptune to appear blue?",
+      "context": [
+        "Uranus and Neptune are ice giants farther from the Sun and appear blue because of methane in their atmospheres."
+      ],
+      "ideal_answer": "Methane"
+    }
+  ],
+  "sports_and_pop_culture": [
+    {
+      "id": "q1",
+      "question": "In what city were the first modern Olympic Games held in 1896?",
+      "context": [
+        "The modern Olympic Games were revived in eighteen ninety-six in Athens, Greece, by Pierre de Coubertin and others..."
+      ],
+      "ideal_answer": "Athens, Greece"
+    },
+    {
+      "id": "q2",
+      "question": "True or false, the Winter Olympic Games and Summer Olympic Games are held in the exact same year every four years.",
+      "context": [
+        "The Winter Olympics began in nineteen twenty-four and also take place every four years, now alternating with the Summer Games so that an Olympic event occurs every two years."
+      ],
+      "ideal_answer": "False"
+    },
+    {
+      "id": "q3",
+      "question": "What do the five interlocking rings in the Olympic symbol represent?",
+      "context": [
+        "The Olympic symbols include five interlocking rings representing the continents..."
+      ],
+      "ideal_answer": "The continents"
+    },
+    {
+      "id": "q4",
+      "question": "What annual award ceremony recognizes excellence in filmmaking?",
+      "context": [
+        "Movie awards such as the Oscars recognize excellence in filmmaking each year."
+      ],
+      "ideal_answer": "The Oscars"
+    }
+  ]
+}

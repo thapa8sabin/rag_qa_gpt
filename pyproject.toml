@@ -1,0 +1,35 @@
+[project]
+name = "quiz-gpt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Sabin Thapa", email = "thapasabin8@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "fastmcp>=4.0.11",
+    "langchain-text-splitters>=1.1.3",
+    "qdrant-client>=1.19.1",
+    "sentencepiece>=0.2.0",
+    "sentence-transformers>=6.1.0",
+    "tiktoken>=0.14.0",
+    "torch>=2.14.1",
+    "transformers>=5.19.0",
+    "python-dotenv>=1.2.4",
+    "accelerate>=1.15.0",
+    "gradio>=5.0",
+    "strands-agents[ollama,openai]>=1.0.0",
+    "numpy>=2.5.3",
+    "datasets>=5.1.0",
+    "scikit-learn>=1.9.1",
+    "tqdm>=4.70.1",
+    "pandas>=3.0.6",
+]
+
+[project.scripts]
+quiz-gpt = "quiz_gpt:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
