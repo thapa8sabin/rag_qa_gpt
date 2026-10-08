@@ -54,7 +54,7 @@ User (Gradio Chat)
     ┌─────┴─────────────┬──────────────────────────┐
     ▼                   ▼                          ▼
 Qdrant KB       Training + Evaluation        Quiz Store
-(embeddings)      (fine tuning model)          (SQLite/DB)
+(embeddings)      (fine tuning)          (SQLite/DB)
 ```
 
 **Flow**
@@ -167,15 +167,24 @@ Open **http://127.0.0.1:7860**
 
 ```
 quiz-gpt/
-├── client.py                 # Gradio + Strands agent
-├── server.py                 # FastMCP server
+├── client.py                   # Gradio + Strands agent
+├── server.py                   # FastMCP server
+├── data/                       # Knowedge base of qa pairs
+├── datasets/                   # saved custom model from training
+│   ├── qa-evaluator-finetuned/
+│   │   ├── config.json
+│   │   ├── model.safetensors
+│   │   ├── model.tokenizer_config.json
+│   │   └── tokenizer.json
+├── docs/                       # Documentation of project
 ├── src/
-│   ├── generation/           # QuestionGenerator, QAEvaluator
-│   ├── storage/              # Quiz store + deduplication
-│   ├── training/             # Trainer + qa_eval_train script
-│   └── injest.py             # Knowledge-base ingestion
-├── golden/                   # Golden dataset for training
-├── docs/                     # Documentation
+│   ├── generation/             # QuestionGenerator, QAEvaluator
+│   ├── retrieval/              # Retrieved vector points from Qdrant
+│   ├── storage/                # Quiz store + deduplication
+│   ├── training/               # Trainer + qa_eval_train script
+│   └── injest.py               # Knowledge-base ingestion
+├── golden/                     # Golden dataset for training
+├── quiz.db                     # SQLite db for storing generated qa pairs
 └── .env
 ```
 
