@@ -30,18 +30,18 @@ File: `server.py`
 
 ## Exposed tools
 
-| Tool                       | Description                                                                 | Side effects          |
-|----------------------------|-----------------------------------------------------------------------------|-----------------------|
-| `search_knowledge_base`    | Retrieves relevant context and generates Q-A pairs for a query.             | None (read-only)      |
-| `save_quiz`                | Stores a list of question–answer pairs under a topic.                       | Writes to DB          |
-| `generate_and_save_quiz`   | Generates pairs for a query **and** stores them in one step.                | Writes to DB          |
-| `list_quizzes`             | Returns id, topic, question count and creation time of every stored quiz.   | None                  |
-| `get_quiz`                 | Fetches a quiz by id. Optional flag to hide answers.                        | None                  |
+| Tool                                   | Description                                                               | Side effects     |
+| -------------------------------------- | ------------------------------------------------------------------------- | ---------------- |
+| `generate_questions_and_answers_pairs` | Retrieves relevant context and generates Q-A pairs for a query.           | None (read-only) |
+| `save_quiz`                            | Stores a list of question–answer pairs under a topic.                     | Writes to DB     |
+| `generate_and_save_quiz`               | Generates pairs for a query **and** stores them in one step.              | Writes to DB     |
+| `list_quizzes`                         | Returns id, topic, question count and creation time of every stored quiz. | None             |
+| `get_quiz`                             | Fetches a quiz by id. Optional flag to hide answers.                      | None             |
 
 ### Tool signatures (simplified)
 
 ```python
-search_knowledge_base(query: str) -> str
+generate_questions(query: str) -> str
 save_quiz(topic: str, questions: list[dict[str, str]]) -> str
 generate_and_save_quiz(query: str) -> str
 list_quizzes() -> str

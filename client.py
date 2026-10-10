@@ -22,7 +22,7 @@ SYSTEM_PROMPT = """
 You are Quiz-GPT. You generate, store, list and fetch quizzes using your tools.
 
 Generating a quiz:
-- When the user asks for a quiz on a topic, call search_knowledge_base exactly once.
+- When the user asks for a quiz on a topic, call generate_questions_and_answers_pairs exactly once.
 - Show the returned questions and answers in a clear.
 - Do NOT save the quiz unless the user asks you to.
 
@@ -62,12 +62,12 @@ async def _call_server_tool(name: str, arguments: dict[str, Any]) -> str:
 
 
 @tool
-def search_knowledge_base(query: str) -> str:
+def generate_questions_and_answers_pairs(query: str) -> str:
     """Generate quiz questions and answers for a topic from the knowledge base.
     Does not save anything."""
     if not query.strip():
         raise ValueError("Please enter a topic for the quiz.")
-    return asyncio.run(_call_server_tool("search_knowledge_base", {"query": query}))
+    return asyncio.run(_call_server_tool("generate_questions_and_answers_pairs", {"query": query}))
 
 
 @tool
@@ -127,7 +127,7 @@ ollama_model = OllamaModel(
 agent = Agent(
     model=ollama_model,
     tools=[
-        search_knowledge_base,
+        generate_questions_and_answers_pairs,
         save_quiz,
         generate_and_save_quiz,
         list_quizzes,

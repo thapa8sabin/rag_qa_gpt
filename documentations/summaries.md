@@ -129,7 +129,7 @@ This is a FastMCP server named “Quiz-GPT” that exposes tools for generating,
 Main pieces
 
 Loads environment variables and sets up a FastMCP instance.
-Imports question generation (generate_questions), quiz storage (quiz_store), and deduplication logic.
+Imports question generation (generate_questions_and_answers_pairs), quiz storage (quiz_store), and deduplication logic.
 
 ### Helper functions
 
@@ -138,7 +138,7 @@ Imports question generation (generate_questions), quiz storage (quiz_store), and
 
 ### Exposed MCP tools
 
-- `search_knowledge_base`: Takes a query, generates relevant Q&A pairs from the knowledge base, and returns them as text.
+- `generate_questions_and_answers_pairs`: Takes a query, generates relevant Q&A pairs from the knowledge base, and returns them as text.
 - `save_quiz`: Saves a list of question/answer pairs under a given topic (with validation + deduplication).
 - `generate_and_save_quiz`: Combines the above: generates Q&A pairs for a query and immediately stores them as a quiz.
 - `list_quizzes`: Returns a summary of all stored quizzes (id, topic, question count, creation time).
@@ -150,7 +150,7 @@ Run the server using this command
 # Initialize 'Quiz-GPT' MCP server using Standard I/O transport.
 uv run fastmcp run server
 
-# The chat uses Strands to call the `search_knowledge_base` FastMCP tool and displays the returned questions and answers.
+# The chat uses Strands to call the `generate_questions_and_answers_pairs` FastMCP tool and displays the returned questions and answers.
 ```
 
 ## Quiz-GPT Client
@@ -172,7 +172,7 @@ uv run python -m client
 
 ### Tools exposed to the agent
 
-- `search_knowledge_base`: Generate Q&A pairs (does not save).
+- `generate_questions_and_answers_pairs`: Generate Q&A pairs (does not save).
 - `save_quiz`: Store a list of question/answer pairs under a topic.
 - `generate_and_save_quiz`: Generate + save in one step.
 - `list_quizzes`: Show all stored quizzes.

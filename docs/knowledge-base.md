@@ -31,4 +31,4 @@ A success message is printed once every document has been processed and uploaded
 - Cosine similarity is used because the embedding model was trained with cosine distance.
 - The collection name `quiz_knowledge_base` is fixed; change it only if you also update the retrieval code.
 
-After ingestion is complete the knowledge base is ready for use by the MCP tools `search_knowledge_base` and `generate_and_save_quiz`.
+After ingestion is complete the knowledge base is ready for use by the MCP tools `generate_questions_and_answers_pairs` and `generate_and_save_quiz`.

@@ -60,7 +60,7 @@ Qdrant KB       Training + Evaluation        Quiz Store
 **Flow**
 
 1. User asks for a quiz on a topic.
-2. Agent calls `search_knowledge_base` (or `generate_and_save_quiz`).
+2. Agent calls `generate_questions_and_answers_pairs` (or `generate_and_save_quiz`).
 3. Server retrieves relevant context → generates candidate pairs with T5 → ranks them with the Evaluator.
 4. Optionally validates, deduplicates, and stores the quiz.
 

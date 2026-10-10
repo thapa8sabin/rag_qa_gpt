@@ -39,8 +39,8 @@ def _validate_pairs(questions: list[dict[str, str]]) -> list[dict[str, str]]:
 
 
 @mcp.tool
-def search_knowledge_base(query: str) -> str:
-    """Retrieve the most relevant context for a question from the Qdrant knowledge base."""
+def generate_questions_and_answers_pairs(query: str) -> str:
+    """ Generates a paired set consisting of a question and its corresponding correct answer based on a source text, knowledge graph, or dataset."""
     if not query.strip():
         raise ValueError("Query must not be empty.")
 

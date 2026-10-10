@@ -14,17 +14,17 @@ File: `client.py`
 
 Environment variables (loaded from the project-root `.env`):
 
-| Variable          | Default                     | Purpose                                      |
-|-------------------|-----------------------------|----------------------------------------------|
-| `OLLAMA_HOST`     | `http://localhost:11434`    | Ollama endpoint                              |
-| `OLLAMA_MODEL`    | `qwen3.5:2b`                | Model used by the agent                      |
-| `QUIZ_SERVER_DIR` | (must be set)               | Absolute path to the project root            |
+| Variable          | Default                  | Purpose                           |
+| ----------------- | ------------------------ | --------------------------------- |
+| `OLLAMA_HOST`     | `http://localhost:11434` | Ollama endpoint                   |
+| `OLLAMA_MODEL`    | `qwen3.5:2b`             | Model used by the agent           |
+| `QUIZ_SERVER_DIR` | (must be set)            | Absolute path to the project root |
 
 ## Tool wrappers
 
 Each MCP tool is exposed to the agent as a synchronous `@tool` function that internally runs the async call with `asyncio.run`:
 
-- `search_knowledge_base(query)`
+- `generate_questions(query)`
 - `save_quiz(topic, questions)`
 - `generate_and_save_quiz(query)`
 - `list_quizzes()`
@@ -34,7 +34,7 @@ Each MCP tool is exposed to the agent as a synchronous `@tool` function that int
 
 The system prompt instructs the model to:
 
-- Call `search_knowledge_base` exactly once when a quiz is requested (do **not** save automatically).
+- Call `generate_questions` exactly once when a quiz is requested (do **not** save automatically).
 - Call `generate_and_save_quiz` only when the user explicitly asks to generate **and** save.
 - When saving an already-displayed quiz, pass the exact question/answer pairs that were shown.
 - Always report the server’s result (how many questions were saved / skipped).
