@@ -10,8 +10,8 @@ generator = QuestionGenerator()
 
 def generate_questions(queries: str) -> list[dict[str, str]]:
     query_embedding = embed_query(queries)
-    retrieved_docs = retrieve(query_embedding, top_k=8)
-    reranked_docs = reranker(queries, retrieved_docs, top_k=10)
+    retrieved_docs = retrieve(query_embedding, top_k=10)
+    reranked_docs = reranker(queries, retrieved_docs, top_k=8)
     context = "\n\n".join(
         reranked_result[0].payload["text"] for reranked_result in reranked_docs
     )

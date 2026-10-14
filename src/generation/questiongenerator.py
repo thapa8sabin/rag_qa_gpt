@@ -32,8 +32,7 @@ class QuestionGenerator:
         self.qg_model = AutoModelForSeq2SeqLM.from_pretrained(QG_PRETRAINED)
         self.qg_model.to(self.device)
         self.qg_model.eval()
-
-        self.qa_evaluator = QAEvaluator(model_name_or_path="C:\\Users\\User\\Desktop\workspace\\quiz-gpt\\datasets\\qa-evaluator-finetuned")
+        self.qa_evaluator = QAEvaluator(model_name_or_path='./qa-evaluator-finetuned')
 
     def generate(
         self,
@@ -158,10 +157,12 @@ class QuestionGenerator:
 
         for sentence in sentences:
             qg_input = f"{self.ANSWER_TOKEN} {sentence} {self.CONTEXT_TOKEN} {text}"
+            # print(f"Tokens: {qg_input}")
             inputs.append(qg_input)
             answers.append(sentence)
 
         return inputs, answers
+
 
     @torch.no_grad()
     def _generate_question(self, qg_input: str) -> str:
@@ -169,7 +170,10 @@ class QuestionGenerator:
         a question sentence. The generated question is decoded and then returned.
         """
         encoded_input = self._encode_qg_input(qg_input)
-        output = self.qg_model.generate(input_ids=encoded_input["input_ids"])
+        output = self.qg_model.generate(
+            input_ids=encoded_input["input_ids"],
+            max_new_tokens=64,
+        )
         question = self.qg_tokenizer.decode(
             output[0],
             skip_special_tokens=True

@@ -41,7 +41,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--golden_path",
         type=str,
-        default=None,
+        default="golden/golden_dataset.json",
         help="Path to golden QA file (json/jsonl/csv). Optional if --use_public only.",
     )
     parser.add_argument(
@@ -62,7 +62,7 @@ def parse_args() -> argparse.Namespace:
         help="Repeat each golden example this many times so the model sees your domain more often.",
     )
     parser.add_argument("--save_dir", type=str, default="./qa-evaluator-finetuned")
-    parser.add_argument("--base_model", type=str, default="bert-base-cased")
+    parser.add_argument("--base_model", type=str, default="iarfmoose/bert-base-cased-qa-evaluator")
     parser.add_argument("--device", type=str, default="cpu", choices=["cpu", "cuda"])
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--learning_rate", type=float, default=2e-5)
@@ -228,11 +228,11 @@ def train_val_split(data: List[dict], valid_ratio: float, seed: int):
 
 
 def load_public(sample_size: int, seed: int) -> List[dict]:
-    """Load and optionally subsample the public iarfmoose/qa_evaluator dataset."""
+    """Load and optionally subsample the public iarfmoose/question_generator dataset."""
     import datasets
 
-    print("Loading public dataset: iarfmoose/qa_evaluator ...")
-    ds = datasets.load_dataset("iarfmoose/qa_evaluator", split="train")
+    print("Loading public dataset: iarfmoose/question_generator ...")
+    ds = datasets.load_dataset("iarfmoose/question_generator", split="train")
     print(f"  → public train size: {len(ds)}")
 
     if sample_size > 0 and sample_size < len(ds):

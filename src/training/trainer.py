@@ -35,7 +35,7 @@ class Trainer:
         valid_batch_size: int = 16,
         dataloader_workers: int = 0,
         pin_memory: bool = False,
-        save_dir: str = "C:\\Users\\User\\Desktop\workspace\\quiz-gpt\\datasets",
+        save_dir: str,
         evaluate_on_accuracy: bool = True,
         max_grad_norm: float = 1.0,
     ) -> None:

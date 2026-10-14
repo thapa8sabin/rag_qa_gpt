@@ -121,7 +121,7 @@ def get_quiz(quiz_id: int, include_answers: bool = True) -> str:
 ollama_model = OllamaModel(
     host=OLLAMA_HOST,
     model_id=OLLAMA_MODEL,  # must be a model that supports tool calling
-    temperature=0,  # keeps the model from rewording questions/answers
+    temperature=0.4,  # keeps the model from rewording questions/answers
 )
 
 agent = Agent(
